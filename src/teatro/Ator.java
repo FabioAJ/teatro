@@ -1,7 +1,16 @@
+/*
+Nome do autor: Fábio Augusto Amaro Jaime
+Data de criação do arquivo: 12/03/2019
+Objetivo sucinto da classe: Manipular dados de um Ator.
+Referência ao enunciado/origem do exercício: https://docs.google.com/document/d/1ewS7W5Lacoxjorj8NxD3zc2uH32P5fWOu2xqjVTWym0/edit
+*/
+
 package teatro;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Ator implements Serializable{
 	
@@ -10,10 +19,14 @@ public class Ator implements Serializable{
 	private String nome;
 	private String nacionalidade;
 	private BigDecimal salario;
+	private List<Papel> papeis = new ArrayList<>();
 	
-	public Ator(Integer iD, String nome, String nacionalidade, BigDecimal salario) {
+	public Ator() {
 		super();
-		ID = iD;
+	}
+
+	public Ator(Integer ID, String nome, String nacionalidade, BigDecimal salario) {
+		this.ID = ID;
 		this.nome = nome;
 		this.nacionalidade = nacionalidade;
 		this.salario = salario;
@@ -23,8 +36,8 @@ public class Ator implements Serializable{
 		return ID;
 	}
 
-	public void setID(Integer iD) {
-		ID = iD;
+	public void setID(Integer ID) {
+		this.ID = ID;
 	}
 
 	public String getNome() {
@@ -49,6 +62,15 @@ public class Ator implements Serializable{
 
 	public void setSalario(BigDecimal salario) {
 		this.salario = salario;
+	}
+	
+	
+	public List<Papel> getPapeis() {
+		return papeis;
+	}
+
+	public void setPapeis(List<Papel> papeis) {
+		this.papeis = papeis;
 	}
 
 	@Override
@@ -93,6 +115,10 @@ public class Ator implements Serializable{
 			return false;
 		return true;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Ator [ID=" + ID + ", nome=" + nome + ", nacionalidade=" + nacionalidade + ", salario=" + salario + "]";
+	}
 	
 }

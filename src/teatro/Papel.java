@@ -1,3 +1,10 @@
+/*
+Nome do autor: Fábio Augusto Amaro Jaime
+Data de criação do arquivo: 12/03/2019
+Objetivo sucinto da classe: Manipular dados de um papel.
+Referência ao enunciado/origem do exercício: https://docs.google.com/document/d/1ewS7W5Lacoxjorj8NxD3zc2uH32P5fWOu2xqjVTWym0/edit
+*/
+
 package teatro;
 
 import java.io.Serializable;
@@ -9,19 +16,24 @@ public class Papel implements Serializable{
 	private Integer ID;
 	private String nomePersonagem;
 	private BigDecimal acrescimos;
-	
-	public Papel(Integer iD, String nomePersonagem, BigDecimal acrescimos) {
+	private Ator ator;
+	private Peca peca;
+
+	public Papel() {
 		super();
-		ID = iD;
+	}
+
+	public Papel(Integer ID, String nomePersonagem, BigDecimal acrescimos) {
+		this.ID = ID;
 		this.nomePersonagem = nomePersonagem;
 		this.acrescimos = acrescimos;
 	}
-	
+
 	public Integer getID() {
 		return ID;
 	}
-	public void setID(Integer iD) {
-		ID = iD;
+	public void setID(Integer ID) {
+		this.ID = ID;
 	}
 	public String getNomePersonagem() {
 		return nomePersonagem;
@@ -34,6 +46,22 @@ public class Papel implements Serializable{
 	}
 	public void setAcrescimos(BigDecimal acrescimos) {
 		this.acrescimos = acrescimos;
+	}
+	
+	public Peca getPeca() {
+		return peca;
+	}
+
+	public void setPeca(Peca peca) {
+		this.peca = peca;
+	}
+	
+	public Ator getAtor() {
+		return ator;
+	}
+
+	public void setAtor(Ator ator) {
+		this.ator = ator;
 	}
 
 	@Override
@@ -73,5 +101,13 @@ public class Papel implements Serializable{
 		return true;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Papel [ID=" + ID + ", nomePersonagem=" + nomePersonagem + ", acrescimos=" + acrescimos + ", ator="
+				+ ator + ", peca=" + peca + "]";
+	}
+
+	public BigDecimal exibirSalarioComAcrescimos() {
+		return ator.getSalario().add(getAcrescimos());
+	}
 }

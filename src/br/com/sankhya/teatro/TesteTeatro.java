@@ -5,7 +5,7 @@ Objetivo sucinto da classe: Testar os objetos das classes Peca, Papel e Ator.
 Referência ao enunciado/origem do exercício: https://docs.google.com/document/d/1ewS7W5Lacoxjorj8NxD3zc2uH32P5fWOu2xqjVTWym0/edit
 */
 
-package teatro;
+package br.com.sankhya.teatro;
 
 import java.math.BigDecimal;
 import java.util.Arrays;

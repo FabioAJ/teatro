@@ -5,7 +5,7 @@ Objetivo sucinto da classe: Manipular dados de um Ator.
 Referência ao enunciado/origem do exercício: https://docs.google.com/document/d/1ewS7W5Lacoxjorj8NxD3zc2uH32P5fWOu2xqjVTWym0/edit
 */
 
-package teatro;
+package br.com.sankhya.teatro;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
